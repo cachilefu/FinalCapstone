@@ -25,15 +25,18 @@ public class ShowService {
 		return(List<Show>) showRepository.findAll();
 	}
 	
-	public Optional<Show> get(Long id) {
-		return showRepository.findById(id);
+	public Show get(Long id) {
+		return showRepository.findById(id).get();
 	}
 	
 	public void delete(Long id) {
 		showRepository.deleteById(id);
 	}
-//	public List<Show> search(String keyword) {
-//		return showRepository.search(keyword);
-//	}
+	public List<Show> search(String keyword) {
+		return showRepository.search(keyword);
+	}
+	
+	
+	}
 
-}
+

@@ -1,11 +1,14 @@
 package com.claim.finalcapstone.model;
 
+import java.util.List;
+
 import javax.persistence.Column;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -23,10 +26,22 @@ public class Show {
 	private String demo;
 	@Column(name="genre")
 	private String genre;
+	
+//	public List<Users> getUser() {
+//		return user;
+//	}
+//
+//	public void setUser(List<Users> user) {
+//		this.user = user;
+//	}
+
 	@Column(name="studio")
 	private String studio;
 	@Column(name="year")
 	private String year;
+	
+//	@ManyToMany(mappedBy="shows")
+//	private List<Users> user;
 	
 	public Show() {
 	

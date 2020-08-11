@@ -11,11 +11,7 @@ import com.claim.finalcapstone.model.Show;
 
 @Repository
 public interface ShowRepository extends JpaRepository<Show, Long> {
-//	@Query(value = "SELECT s FROM Shows s WHERE s.name LIKE '%' || :keyword || '%'"
-//			+ " OR s.demo LIKE '%' || :keyword || '%'"
-//			+ " OR s.genre LIKE '%' || :keyword || '%'"
-//			+ " OR s.studio LIKE '%' || :keyword || '%'"
-//			+ " OR s.year LIKE '%' || :keyword || '%'")
-//	public List<Show> search(@Param("keyword") String keyword);
+	@Query("FROM Show s WHERE s.name LIKE %:keyword% OR s.demo LIKE %:keyword% OR s.genre LIKE %:keyword% OR s.studio LIKE %:keyword% OR s.year LIKE %:keyword%")
+	public List<Show> search(@Param("keyword")String keyword);
 
 }
